@@ -101,5 +101,21 @@ export const PORTFOLIO_DATA: IPortfolioData = {
 		{ language: 'Inglês', proficiency: 'B2' },
 		{ language: 'Espanhol', proficiency: 'Básico' }
 	],
-	publications: ['https://www.linkedin.com/posts/gregory-oliveira_softwareengineering-softwarearchitecture-ugcPost-7446316749794263040-qRTF?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAADWzZYUBin3V5FcSaQCvWURo50EwGfIkjR0', 'https://www.linkedin.com/pulse/pdf-processor-app-gregory-oliveira-7enyf']
+	profilePicture: 'https://media.licdn.com/dms/image/v2/D4E03AQGwLwoPxCEPZw/profile-displayphoto-scale_400_400/B4EZw6l7a.HgAk-/0/1770509553746?e=1777507200&v=beta&t=8nDHf7MDXt0VNUOVpuDhtsorxGC-im03A6NU8wu2K10',
+	publications: [
+		{
+			title: 'PDF Processor App',
+			url: 'https://www.linkedin.com/pulse/pdf-processor-app-gregory-oliveira-7enyf/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base%3B1fAcDMF9T82Tn0FRaYO04w%3D%3D',
+			imageUrl: 'https://media.licdn.com/dms/image/v2/D4D12AQE8djOGG_a7jQ/article-cover_image-shrink_720_1280/B4DZ1fsWeJHkAI-/0/1775426960729?e=1777507200&v=beta&t=ApUlEOHLH0wTJuINpuRXwzTmtjVidtPb7HLdaYZHO08',
+			date: 'Março 2026',
+			platform: 'LinkedIn'
+		},
+		{
+			title: 'Custom exception with @Decorator',
+			url: 'https://www.linkedin.com/pulse/decorator-gregory-oliveira-3s1uf/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base%3B1fAcDMF9T82Tn0FRaYO04w%3D%3D',
+			imageUrl: 'https://media.licdn.com/dms/image/v2/D4D12AQH0ierwB4Nbsg/article-cover_image-shrink_720_1280/B4DZzDTFmzJ4AI-/0/1772803096727?e=1777507200&v=beta&t=OisrhbjeAJkiki9fYiibqN1AlVzleO4L4HNZ0T32lMY',
+			date: 'Janeiro 2026',
+			platform: 'LinkedIn'
+		}
+	]
 };
