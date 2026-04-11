@@ -1,1 +1,28 @@
-/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-bg-main: #05000a;
+    --color-bg-surface: #160029;
+    --color-primary: #9d00ff;
+    --color-accent: #e500ff;
+    --color-text-main: #f8f4ff;
+    --color-text-muted: #d4b3ff;
+    --color-border: #2a004e;
+  }
+
+  body {
+    @apply bg-[var(--color-bg-main)] text-[var(--color-text-main)] font-sans antialiased selection:bg-[var(--color-primary)] selection:text-white;
+  }
+}
+
+@layer utilities {
+  .transition-fluid {
+    @apply transition-all duration-300 ease-in-out;
+  }
+  .hover-neon {
+    @apply hover:shadow-[0_0_15px_var(--color-accent)] hover:border-[var(--color-accent)];
+  }
+}
