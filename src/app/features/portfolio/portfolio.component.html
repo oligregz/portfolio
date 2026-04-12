@@ -1,0 +1,18 @@
+<section class="py-16 px-4 max-w-7xl mx-auto">
+  <div class="mb-10">
+    <h2 class="text-3xl font-extrabold text-text-main mb-2">Articles and Publications</h2>
+    <div class="h-1 w-20 bg-primary rounded-full"></div>
+    <p class="text-text-muted mt-4">
+      Sharing knowledge about solutions, architecture and development.
+    </p>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    @for (pub of portfolioData().publications; track pub.title) {
+      <app-publication-card [publication]="pub"></app-publication-card>
+    } @empty {
+      <app-skeleton type="card"></app-skeleton>
+      <app-skeleton type="card"></app-skeleton>
+    }
+  </div>
+</section>

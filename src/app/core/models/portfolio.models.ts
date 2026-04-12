@@ -37,6 +37,7 @@ export interface ILanguage {
 export interface IPublication {
 	title: string;
 	url: string;
+	imageUrl: string;
 	date: string;
 	platform: string;
 }
@@ -50,6 +51,7 @@ export interface IPortfolioData {
 	linkedin: string;
 	github: string;
 	about: string;
+	profilePicture: string;
 	technologies: ITechnology[];
 	experiences: IExperience[];
 	projects: IProject[];
