@@ -94,13 +94,26 @@ export const PORTFOLIO_DATA: IPortfolioData = {
 		}
 	],
 	education: [
-		{ institution: 'University Estácio de Sá', degree: 'Bachelor\'s Degree in Software Engineering', period: '07/2023 - 07/2027' },
-		{ institution: 'Trybe, Feat com SCC4', degree: 'Programa de Aceleração JAVA', period: '01/2022 - 04/2022' }
+		{
+			institution: 'University Estácio de Sá',
+			degree: "Bachelor's Degree in Software Engineering",
+			period: '07/2023 - 07/2027'
+		},
+		{
+			institution: 'Trybe, Feat with SCC4',
+			degree: 'Java Acceleration Program',
+			period: '01/2022 - 04/2022'
+		},
+		{
+			institution: 'Trybe',
+			degree: 'Web Development Program',
+			period: '01/2021 - 12/2021'
+		}
 	],
 	languages: [
-		{ language: 'Português', proficiency: 'Fluent/C2' },
-		{ language: 'Inglês', proficiency: 'B1' },
-		{ language: 'Espanhol', proficiency: 'B1' }
+		{ language: 'Portuguese', proficiency: 'Native/C2' },
+		{ language: 'English', proficiency: 'B2' },
+		{ language: 'Spanish', proficiency: 'B1' }
 	],
 	profilePicture: 'https://media.licdn.com/dms/image/v2/D4E03AQGwLwoPxCEPZw/profile-displayphoto-scale_400_400/B4EZw6l7a.HgAk-/0/1770509553746?e=1777507200&v=beta&t=8nDHf7MDXt0VNUOVpuDhtsorxGC-im03A6NU8wu2K10',
 	publications: [
