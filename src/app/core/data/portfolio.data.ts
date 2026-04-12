@@ -26,7 +26,7 @@ export const PORTFOLIO_DATA: IPortfolioData = {
 				'Designed RESTful APIs and microservices with JWT authentication, managing containerized infrastructure (Docker) and AWS deployments (EC2, Lambda, API Gateway, S3, RDS).',
 				'Built automated (CI/CD) and reliable manual release pipelines, ensuring system stability through rigorous unit and integration testing with Jest.'
 			],
-			technologies: [{ name: 'Angular' }, { name: 'React' }, { name: 'NestJS' }, { name: 'AWS' }, { name: 'Docker' }, { name: 'Jest' }]
+			technologies: [{ name: 'Typescript' }, { name: 'AWS Services' }, { name: 'NestJS' }, { name: 'Docker' }, { name: 'MySQL' }, { name: 'Jest' }, { name: 'Angular' }, { name: 'React' }]
 		},
 		{
 			id: 'exp-2',
@@ -39,7 +39,7 @@ export const PORTFOLIO_DATA: IPortfolioData = {
 				'Developed a debt renegotiation portal for the energy sector, offering intelligent algorithms that increased successful renegotiations by 31%.',
 				'Automated report generation, reducing processing time from 8 minutes to 2 minutes (75% improvement).'
 			],
-			technologies: [{ name: 'Node.js' }, { name: 'AWS' }, { name: 'MongoDB' }, { name: 'Azure DevOps' }]
+			technologies: [{ name: 'Node.js' }, { name: 'AWS Services ' }, { name: 'Jest' }, { name: 'Docker' }, { name: 'MongoDB' }, { name: 'Azure DevOps' }, { name: 'OpenShift' }]
 		},
 		{
 			id: 'exp-3',
@@ -51,7 +51,7 @@ export const PORTFOLIO_DATA: IPortfolioData = {
 				'Led the technology department, establishing standardized workflows for support tickets, increasing problem resolution efficiency by 18%.',
 				'Optimized monthly expenses with external services by 7% through strategic management.'
 			],
-			technologies: []
+			technologies: [{ name: 'TOTVS Winthor' }, { name: 'SQL Oracle' }]
 		},
 		{
 			id: 'exp-4',
@@ -63,7 +63,7 @@ export const PORTFOLIO_DATA: IPortfolioData = {
 				'Developed applications across two projects using TypeScript, Fastify, React, and PostgreSQL, with deployment via Render.',
 				'Collaborated within Scrum frameworks, implementing SOLID principles, SMTPS services, and CI/CD workflows.'
 			],
-			technologies: [{ name: 'React' }, { name: 'Fastify' }, { name: 'PostgreSQL' }, { name: 'TypeScript' }]
+			technologies: [{ name: 'TypeScript' }, { name: 'Fastify' }, { name: 'PostgreSQL' }, { name: 'React' }]
 		}
 	],
 	projects: [
@@ -71,7 +71,7 @@ export const PORTFOLIO_DATA: IPortfolioData = {
 			id: 'proj-1',
 			title: 'PDF Processor',
 			description: 'Fullstack, distributed, event-driven system for background text extraction. Architected with concurrency limits, rate limiting, and WebSockets. Developed in collaboration with advanced AI tools (gemini cli).',
-			technologies: [{ name: 'Angular 21' }, { name: 'NestJS' }, { name: 'Spring Boot' }, { name: 'RabbitMQ' }, { name: 'Cloudflare R2' }],
+			technologies: [{ name: 'Docker' }, { name: 'JAVA' }, { name: 'Spring Boot' }, { name: 'Typescript' }, { name: 'NestJS' }, { name: 'RabbitMQ' }, { name: 'Cloudflare R2' }, { name: 'Angular 21' }],
 			repositoryUrl: 'github.com/oligregz/pdf-processor',
 			liveUrl: 'https://pdf-processor-kappa-two.vercel.app',
 			isHighlight: true
