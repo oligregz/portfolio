@@ -4,10 +4,10 @@ import { IPortfolioData } from '../../../core/models/portfolio.models';
 import { ButtonComponent } from '../../../shared/components/button.component';
 
 @Component({
-	selector: 'app-hero',
-	standalone: true,
-	imports: [CommonModule, ButtonComponent],
-	template: `
+  selector: 'app-hero',
+  standalone: true,
+  imports: [CommonModule, ButtonComponent],
+  template: `
     <section class="min-h-[85vh] flex items-center justify-center py-20 px-4 max-w-7xl mx-auto">
       <div class="flex flex-col-reverse md:flex-row items-center justify-between gap-12 md:gap-8 w-full">
 
@@ -58,9 +58,9 @@ import { ButtonComponent } from '../../../shared/components/button.component';
   `
 })
 export class HeroComponent {
-	data = input.required<IPortfolioData>();
+  data = input.required<IPortfolioData>();
 
-	openLink(url: string): void {
-		window.open(url, '_blank');
-	}
+  openLink(url: string): void {
+    window.open(url, '_blank');
+  }
 }
