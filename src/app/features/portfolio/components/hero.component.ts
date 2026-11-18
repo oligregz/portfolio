@@ -20,7 +20,7 @@ import { ButtonComponent } from '../../../shared/components/button.component';
             {{ data().name }}
           </h1>
           
-          <h2 class="text-2xl md:text-3xl lg:text-4xl text-primary font-bold mb-6">
+          <h2 class="text-xl md:text-2xl lg:text-3xl text-primary font-bold mb-6">
             {{ data().title }}
           </h2>
           
@@ -28,12 +28,15 @@ import { ButtonComponent } from '../../../shared/components/button.component';
             {{ data().about }}
           </p>
 
-          <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
-            <app-button variant="primary" (onClick)="openLink('mailto:' + data().email)">
-              Get in Touch
+          <div class="flex flex-wrap items-center justify-center md:justify-start gap-4 w-full">
+            <app-button variant="primary" (onClick)="openLink('https://wa.me/5511911892868')">
+              WhatsApp (+55 11 91189-2868)
+            </app-button>
+            <app-button variant="outline" (onClick)="openLink('mailto:' + data().email)">
+              Email
             </app-button>
             <app-button variant="outline" (onClick)="openLink('https://' + data().github)">
-              View GitHub
+              GitHub
             </app-button>
             <app-button variant="ghost" (onClick)="openLink('https://' + data().linkedin)">
               LinkedIn

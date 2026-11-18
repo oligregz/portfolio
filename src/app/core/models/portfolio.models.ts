@@ -47,6 +47,7 @@ export interface IPortfolioData {
 	title: string;
 	location: string;
 	phone: string;
+	whatsapp: string;
 	email: string;
 	linkedin: string;
 	github: string;

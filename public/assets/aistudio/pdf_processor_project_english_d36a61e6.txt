@@ -1,0 +1,37 @@
+# PDF Processor
+
+**Live Application:** https://pdf-processor-kappa-two.vercel.app
+**GitHub Repository:** https://github.com/oligregz/pdf-processor
+
+## Building a Resilient Distributed System: The Architecture of the PDF Processor
+
+Resolving an almost daily problem, I decided to condense a large part of my development knowledge, called the gemini cli to be my development partner, and created the PDF Processor—a full-stack distributed system built to handle background text extraction from PDF files. Modern web applications require more than just a functional backend and a pretty frontend. They demand scalability, resilience, and a seamless user experience. This article details the architectural journey of this project.
+
+### 1. Non-Functional Requirements (NFRs)
+Before writing any code, it was crucial to define the rules that would govern the system's behavior under stress:
+* **High Availability and Resilience:** The system must not crash if multiple users upload heavy files simultaneously. We implemented a strict concurrency limit of 5 simultaneous processing jobs. Requests beyond this limit are safely queued.
+* **Security and Abuse Prevention:** To prevent DDoS attacks and bandwidth exhaustion, the system features a memory-based Rate Limit. Users are restricted to uploading 3 PDFs per 24 hours, and download links expire after 3 uses.
+* **Performance (Fire and Forget):** The UI must never block the user. Once a file is uploaded, the frontend immediately frees the user to navigate elsewhere, relying on asynchronous processing.
+* **UX/UI Consistency:** The application strictly follows a "Dark Crimson & Deep Graphite" visual identity. This design pattern is enforced across the Angular frontend and even embedded in the HTML of the transactional emails.
+
+### 2. Choosing the Right Services
+To achieve a true enterprise-grade architecture, the monolithic approach was discarded in favor of specialized microservices and modern cloud infrastructure:
+* **API Gateway vs. Background Worker:** The backend is divided into two parts. A Node.js Gateway handles fast, synchronous tasks (authentication, WebSockets, rate limiting), while a Java Worker handles the heavy CPU-bound task of PDF text extraction.
+* **Message Broker (RabbitMQ):** To connect the Gateway and the Worker safely, RabbitMQ decouples the services, ensuring that if the Java Worker goes offline, the Node.js Gateway can still accept uploads and queue them.
+* **Storage (Cloudflare R2):** Instead of storing files on the local server, Cloudflare R2 was chosen for its S3-compatible API and zero egress fees, making it highly cost-effective for serving downloaded text files via data streams.
+* **Deployment Strategy:** The frontend is deployed to the Edge using Vercel. The backend ecosystem is containerized with Docker and hosted on a private Linux VPS.
+
+### 3. The Role of AI in Development
+Building a distributed system with multiple languages and frameworks is complex. To accelerate development and maintain high code quality, this project utilized the gemini cli, an AI coding assistant running in the terminal. Acting as an advanced pair-programming partner, Gemini was instructed and supervised while generating boilerplate code, navigating complex NestJS dependency injections, resolving Hibernate/PostgreSQL data type conflicts, and enforcing strict architectural patterns across the entire monorepo.
+
+### 4. Infrastructure, CI/CD, and System Stability
+To maintain the system running smoothly in production, several critical infrastructure techniques were implemented:
+* **Continuous Integration and Deployment (CI/CD):** The project relies on automated pipelines using GitHub Actions. Upon pushing to the main branch, the pipeline automatically runs tests, builds Docker images, pushes them to Docker Hub, and performs a secure SSH deployment to update the VPS. The frontend benefits from automated, zero-downtime Edge deployments via Vercel.
+* **Memory Swap:** To stabilize the VPS environment, a memory swap file was configured. This technique allocates disk space to act as virtual RAM, solving the problem of Out-Of-Memory (OOM) crashes that typically occur when running multiple resource-heavy containers (Java, Node, RabbitMQ, and PostgreSQL) simultaneously on a constrained machine.
+* **Data Encryption (Certbot):** End-to-end data encryption is guaranteed using Certbot, which automatically provisions and manages SSL/TLS certificates for secure HTTPS and WebSocket (WSS) communication.
+
+### 5. Technology Stack
+* **Frontend:** Angular 21, Tailwind CSS, Socket.io-client (hosted on Vercel).
+* **API Gateway:** NestJS, Socket.io, Class-Validator / Swagger.
+* **Background Worker:** Java 17 & Spring Boot, Apache PDFBox, Spring Data JPA / Hibernate, Spring Mail.
+* **Infrastructure & Data:** PostgreSQL, RabbitMQ, Cloudflare R2, Docker & Docker Compose, Certbot, GitHub Actions.

@@ -1,0 +1,37 @@
+# PDF Processor
+
+**Live Application:** https://pdf-processor-kappa-two.vercel.app
+**GitHub Repository:** https://github.com/oligregz/pdf-processor
+
+## Construindo um Sistema Distribuído Resiliente: A Arquitetura do PDF Processor
+
+Resolvendo um problema quase que diário, decidi condensar boa parte do meu conhecimento com desenvolvimento, chamei o gemini cli para ser meu parceiro de desenvolvimento e criei o PDF Processor — um sistema distribuído full-stack construído para lidar com a extração de texto de arquivos PDF em segundo plano. Aplicações web modernas exigem mais do que apenas um backend funcional e um frontend bonito. Elas exigem escalabilidade, resiliência e uma experiência de usuário fluida. Este artigo detalha a jornada arquitetural deste projeto.
+
+### 1. Requisitos Não Funcionais (RNFs)
+Antes de escrever qualquer código, foi crucial definir as regras que governariam o comportamento do sistema sob estresse:
+* **Alta Disponibilidade e Resiliência:** O sistema não deve falhar se vários usuários fizerem upload de arquivos pesados simultaneamente. Implementamos um limite rigoroso de concorrência de 5 processamentos simultâneos. Requisições além desse limite são enfileiradas com segurança.
+* **Segurança e Prevenção contra Abusos:** Para evitar ataques DDoS e exaustão de banda, o sistema conta com um Rate Limit em memória. Os usuários são restritos a fazer o upload de 3 PDFs a cada 24 horas, e os links de download expiram após 3 usos.
+* **Performance (Fire and Forget):** A interface nunca deve bloquear o usuário. Assim que um arquivo é enviado, o frontend libera o usuário imediatamente para navegar em outro lugar, dependendo do processamento assíncrono.
+* **Consistência de UX/UI:** A aplicação segue estritamente uma identidade visual "Dark Crimson & Deep Graphite". Esse padrão de design é aplicado em todo o frontend Angular e até mesmo embutido no HTML dos e-mails transacionais.
+
+### 2. Escolha dos Serviços
+Para alcançar uma verdadeira arquitetura de nível corporativo (Enterprise), a abordagem monolítica foi descartada em favor de microsserviços especializados e infraestrutura em nuvem moderna:
+* **API Gateway vs. Background Worker:** O backend é dividido em duas partes. Um Gateway em Node.js lida com tarefas rápidas e síncronas (autenticação, WebSockets, rate limit), enquanto um Worker em Java lida com a tarefa pesada (CPU-bound) de extração de texto do PDF.
+* **Message Broker (RabbitMQ):** Para conectar o Gateway e o Worker com segurança, o RabbitMQ desacopla os serviços, garantindo que se o Worker Java ficar offline, o Gateway Node.js ainda possa aceitar uploads e enfileirá-los.
+* **Storage (Cloudflare R2):** Em vez de armazenar arquivos no servidor local, o Cloudflare R2 foi escolhido por sua API compatível com S3 e taxa zero de egress, tornando-o altamente econômico para servir arquivos de texto via streams de dados.
+* **Estratégia de Deploy:** O frontend foi hospedado na borda (Edge) usando a Vercel. O ecossistema de backend foi conteinerizado com Docker e hospedado em uma VPS Linux privada.
+
+### 3. O Papel da IA no Desenvolvimento
+Construir um sistema distribuído com múltiplas linguagens e frameworks é complexo. Para acelerar o desenvolvimento e manter a alta qualidade do código, este projeto utilizou o gemini cli, um assistente de codificação de IA executado no terminal. Atuando como um parceiro avançado de pair-programming, o Gemini foi instruído e supervisionado ao gerar código boilerplate, navegar pelas complexas injeções de dependência do NestJS, resolver conflitos de tipos de dados entre Hibernate e PostgreSQL, e impor padrões arquiteturais rigorosos em todo o monorepo.
+
+### 4. Infraestrutura, CI/CD e Estabilidade do Sistema
+Para manter o sistema rodando perfeitamente em produção, diversas técnicas críticas de infraestrutura foram implementadas:
+* **Continuous Integration and Deployment (CI/CD):** O projeto conta com uma esteira automatizada usando GitHub Actions. A cada push na branch main, a pipeline roda testes, compila as imagens Docker, envia para o Docker Hub e executa o deploy automático via SSH na VPS. O frontend possui deploy contínuo, sem tempo de inatividade, gerenciado pela Vercel.
+* **Memory Swap (Troca de Memória):** Para estabilizar o ambiente da VPS, configuramos um arquivo de swap de memória. Essa técnica aloca espaço em disco para atuar como memória RAM virtual, resolvendo o problema de travamentos por falta de memória (Out-Of-Memory) que normalmente ocorrem ao rodar múltiplos contêineres pesados simultaneamente (Java, Node, RabbitMQ e PostgreSQL) em uma máquina com recursos limitados.
+* **Criptografia de Dados (Certbot):** A criptografia de ponta a ponta é garantida através do Certbot, que provisiona e gerencia automaticamente os certificados SSL/TLS para comunicações seguras via HTTPS e WebSockets (WSS).
+
+### 5. Stack Tecnológica
+* **Frontend:** Angular 21, Tailwind CSS, Socket.io-client (hospedado na Vercel).
+* **API Gateway:** NestJS, Socket.io, Class-Validator / Swagger.
+* **Background Worker:** Java 17 & Spring Boot, Apache PDFBox, Spring Data JPA / Hibernate, Spring Mail.
+* **Infraestrutura e Dados:** PostgreSQL, RabbitMQ, Cloudflare R2, Docker & Docker Compose, Certbot, GitHub Actions.

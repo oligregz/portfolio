@@ -1,0 +1,73 @@
+# INFORMAÇÕES DE CONTATO
+- Nome: Gregory Oliveira
+- Título: Software Developer | Fullstack | AI | Typescript - Node.js | AWS | JAVA - Springboot
+- Localização: São Paulo | São Paulo, Brazil
+- Telefone: +55 75 9 91689780
+- Email: gregorysak90@gmail.com
+- LinkedIn: www.linkedin.com/in/gregory-oliveira
+- Portfólio: portfolio-one-zeta-b9b0lamq1a.vercel.app/
+
+# RESUMO PROFISSIONAL (SUMMARY)
+Backend Developer with a solid Fullstack background, driven by the challenge of turning technical complexity into operational efficiency. Throughout my career, I have worked on critical systems in industries such as steel and energy, focusing on delivering stability and measurable business results: in recent projects, I reduced operational cloud costs by 28% and improved data processing performance by 75%. With solid experience in the Node.js, TypeScript, and Java ecosystems, I focus on delivering resilient microservices and APIs. I manage the entire software development life cycle, from database modeling (SQL/NoSQL) to infrastructure orchestration (AWS and Docker). Driven by quick adaptation to different environments and clear technical communication, I work with a strong focus on code quality and automated testing. Currently pursuing a degree in Software Engineering, I am constantly evolving my technical skills to build solutions that generate real value for the business.
+
+# HABILIDADES TÉCNICAS (TOP SKILLS & TECH STACK)
+- Backend Engineering: Node.js (NestJS, Fastify, Express), TypeScript, Java (Spring Boot), Clean Code, SOLID principles.
+- Cloud & DevOps Culture: AWS (SQS, SNS, Lambda, EC2, S3, RDS, API Gateway), Google Cloud, Docker, Azure DevOps, CI/CD automation.
+- Databases: PostgreSQL, MySQL, MongoDB, Mongoose.
+- Frontend: React, Angular, Bootstrap.
+- Testing & Quality: Jest, Unit testing, Integration testing, Mock testing, Sonar.
+- Architecture & Patterns: Microservices Architecture, Event-Driven Architecture (EDA), RESTful APIs.
+- Outros/Ferramentas: TOTVS Winthor, LAN, Linux environment, Git, GitLab, Jira, Scrum, Kanban, OpenShift.
+
+# EXPERIÊNCIA PROFISSIONAL
+
+## Tokenlab
+**Back End Developer** | São Paulo, SP, Brazil | Janeiro 2026 - Presente (11 meses)
+- Exclusive focus on the backend ecosystem, responsible for the design, development, and maintenance of a distributed and scalable architecture.
+- Distributed Architecture & Core API: Develop the system's core and microservices using TypeScript, ensuring high availability, strict static typing, and the application of SOLID and Clean Code principles.
+- Complex Business Rules: Engineer isolated services for specific domains, including building a calculation engine for monetary correction based on Brazilian financial market indices, and a dedicated microservice for massive PDF processing.
+- Messaging & Event-Driven Architecture (EDA): Design asynchronous, resilient, and fault-tolerant communication between services using AWS SQS queues. Implement multi-layered notification systems via AWS SNS topics.
+- Cloud Optimization & Serverless: Create automated routines with AWS Lambda for intelligent control of the microservices' operating windows (business hours), aiming for high operational efficiency and a drastic reduction in idle infrastructure costs.
+- Quality & Delivery: Maintain code quality standards through automated testing and continuous integration (CI/CD), ensuring the microservices ecosystem scales securely.
+- *Technologies:* TypeScript, Node.js, Microservices Architecture, AWS (SQS, SNS, Lambda, EC2/Containers), RESTful APIs, EDA, Automated Testing.
+
+## Tokenlab
+**Full Stack Developer** | São Paulo, Brazil | Abril 2025 - Janeiro 2026 (10 meses)
+- Designed and implemented scalable web applications using TypeScript, Angular, React, Node.js, Nest.js, and AWS. Spanned the entire development lifecycle, ensuring high performance, clean code, and reliable delivery pipelines.
+- Frontend Development: Built responsive UIs with Angular and React, leveraging Bootstrap and TypeScript. Managed frontend deployments to AWS S3, including automated and manual deployment pipelines.
+- Backend Development: Developed RESTful APIs with Node.js, Express, and Nest.js, implementing JWT authentication, microservices architecture, and backend deployments on AWS EC2, Lambda, and API Gateway.
+- Testing & Quality: Wrote unit and integration tests using Jest to ensure reliability, stability, and maintainability.
+- Cloud & DevOps: Designed and maintained automated and manual deploy pipelines, managed AWS infrastructure, and handled container management (Docker) for backend services.
+- Agile Collaboration: Worked in Agile environments using Jira for task tracking, participating in Scrum and Kanban workflows.
+- *Technologies:* TypeScript, Angular, React, Bootstrap, Node.js, Nest.js, Express, Jest, Docker, AWS (S3, EC2, Lambda, API Gateway, RDS), CI/CD, Jira.
+
+## Enacom Group
+**Back-end Developer** | Janeiro 2024 - Outubro 2024 (10 meses)
+- Worked on 3 high-complexity projects: 1 in the steel industry niche and 2 in the energy industry niche.
+- Steel industry project: Implemented features that increased task launch time optimization by 66% and reduced user costs by 28%.
+- Energy industry projects: 
+  1. Implemented features in a debt renegotiation portal offering intelligent discounts, resulting in a 31% increase in successful debt renegotiations.
+  2. Implemented automation features for generating reports, optimizing user time from 8 minutes to 2 minutes (75% improvement).
+- Followed best programming practices and ethics, implemented data encryption for clients, user accessibility restrictions, log services (OpenShift), and AWS services (EC2, SQS, and S3).
+- *Technologies:* JavaScript, Mongoose, MongoDB, Sonar, Azure DevOps, Scrum, Linux environment, Docker, CI/CD, Git, GitLab, Unit/Integration/Mock testing.
+
+## Unifrio Refrigeração Ltda
+**IT Technician** | Santo Antônio de Jesus, Bahia, Brasil | Novembro 2023 - Janeiro 2024 (3 meses)
+- Support for server hardware, CPUs and winthor system in UNIFRIO LTDA.
+
+## Skill Labs.
+**Back-end Developer** | Julho 2023 - Janeiro 2024 (7 meses)
+- Worked on 2 projects: 1 in the app store niche and the other in the presentation portal.
+- Learned how Scrum works, collaborated on implementations, CI/CD flow, SMTPS services, SOLID principles, implemented features, and worked on the frontend with integration.
+- *Technologies:* TypeScript, Fastify, data encryption, Postgres, Render for deployment, and React.
+
+# FORMAÇÃO ACADÊMICA (EDUCATION)
+- **Estácio**: Bachelor's, Software Engineering (Julho 2023 - Julho 2027)
+- **Trybe**: Desenvolvedor de Software Web, Desenvolvimento de Software (Agosto 2021 - Agosto 2022)
+
+# CERTIFICAÇÕES
+- Desenvolvimento Front-End
+- Fundamentos do Desenvolvimento Web
+- Aceleração Java
+- AWS Discovery Day - Cloud Practitioner Essentials
+- Ciência da Computação
