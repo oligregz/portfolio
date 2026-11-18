@@ -9,6 +9,7 @@ export const PORTFOLIO_DATA: IPortfolioData = {
 	linkedin: 'linkedin.com/in/gregory-oliveira',
 	github: 'github.com/oligregz',
 	about: 'Fullstack developer focused on designing and implementing scalable web applications. I have extensive experience across the entire development lifecycle, from microservices architecture and event-driven systems (EDA) to deployment in cloud infrastructures. Passionate about clean code, performance, and continuous delivery.',
+	profilePicture: '/perfil.png',
 	technologies: [
 		{ name: 'TypeScript' }, { name: 'Angular' }, { name: 'React' }, { name: 'Node.js' },
 		{ name: 'NestJS' }, { name: 'Spring Boot' }, { name: 'Java' }, { name: 'AWS' },
@@ -115,7 +116,6 @@ export const PORTFOLIO_DATA: IPortfolioData = {
 		{ language: 'English', proficiency: 'B2' },
 		{ language: 'Spanish', proficiency: 'B1' }
 	],
-	profilePicture: 'https://media.licdn.com/dms/image/v2/D4E03AQGwLwoPxCEPZw/profile-displayphoto-scale_400_400/B4EZw6l7a.HgAk-/0/1770509553746?e=1777507200&v=beta&t=8nDHf7MDXt0VNUOVpuDhtsorxGC-im03A6NU8wu2K10',
 	publications: [
 		{
 			title: 'PDF Processor App',
